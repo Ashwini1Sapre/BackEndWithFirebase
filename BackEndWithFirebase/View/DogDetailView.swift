@@ -11,7 +11,7 @@ import SwiftUI
 
 struct DogDetailView: View {
     
-    @Environment(\.presentationMode) var presationMode
+    @Environment(\.presentationMode) private var presationMode
    @State var presentationEditDogSheet = false
     
     
@@ -63,15 +63,15 @@ struct DogDetailView: View {
         }
         
         .sheet(isPresented: self.$presentationEditDogSheet) {
-//    DogEditView(viewModel: DogViewModel(dog: DogModel), Mode: .edit) { result in
-//                if case .success(let action)  = result, action == .delete {
-//
-//                    self.presationMode.wrappedValue.dismiss()
-//                }
-//
-//
-//            }
-            //here is edit view
+    DogEditView(viewModel1:DogViewModel(dog: dog), Mode: .edit) { result in
+                if case .success(let action)  = result, action == .delete {
+
+                    self.presationMode.wrappedValue.dismiss()
+                }
+
+
+            }
+         
             
             
             
