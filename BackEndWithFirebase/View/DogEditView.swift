@@ -7,7 +7,7 @@
 
 import SwiftUI
 enum mode {
-  case new
+    case new
     case edit
     
 }
@@ -20,8 +20,6 @@ enum action{
     
 }
 struct DogEditView: View {
-    
-    
     
     //presentationMode
     @Environment(\.presentationMode) private var presentionMode
@@ -43,18 +41,14 @@ struct DogEditView: View {
     
     var saveButton: some View {
         
-Button(action: { self.handelDoneButton() }) {
+    Button(action: { self.handelDoneButton() }) {
             
             Text(Mode == .new ? "Done" : "Save")
             
         }
         .disabled(!viewModel1.modified)
     }
-    
-    
-    
-    
-    
+  
     var body: some View {
         NavigationView {
         Form {
@@ -111,8 +105,8 @@ Button(action: { self.handelDoneButton() }) {
            }
             
         }
-        
     }
+    
 
     
     func handelDoneButton() {
